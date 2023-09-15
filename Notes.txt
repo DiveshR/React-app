@@ -1,0 +1,33 @@
+DOM
+Virtual DOM :Js object
+
+const virtualDOM = {
+    key:value,
+    key:value,
+}
+Prerequisted
+- JS
+
+Components Base Library
+- All parts divides into components.
+
+Types of components
+
+Functional :
+import React from 'react'
+
+const Example = () => {
+    return <div>Hello World</div> //here it is JSX( template) interface look like
+};
+
+
+Class :
+import React, {Component} from 'react'
+class Example extends Component{
+    render() {
+        return <div>Hello</div>
+    }
+}
+
+create-react-app
+npx create-react-app app_name
