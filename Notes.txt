@@ -31,3 +31,101 @@ class Example extends Component{
 
 create-react-app
 npx create-react-app app_name
+
+
+
+
+import './App.css';
+
+const App = () => {   //Arrow Function Component    <></> React fragment --like a empty div
+ const name = null;
+ const isNameShowing = true;
+  return (
+    <div className="App">
+      <h1>Hello  {isNameShowing ? name : "React"}</h1>  
+      {
+        name ? (<>   
+        Test
+        </>
+        ): ( <><h1>Yes</h1>  
+          <h2>Check</h2>
+          </>
+
+      )}
+    </div>
+  );
+}
+
+export default App;
+
+Props : Allow you to pass dynamic data through react components. arguments passed in components via attributes
+
+Every components build in props objects.
+
+
+import './App.css';
+
+const Person = (props) => {
+  return (
+    <>
+    <h1>Name: {props.name}</h1>
+    <h2>Last Name: {props.lastName}</h2>
+    <h2>Age: {props.age}</h2>
+    </>
+  )
+}
+const App = () => {   //Arrow Function Component    <></> React fragment --like a empty div
+ const name = null;
+ const isNameShowing = true;
+  return (
+    <div className="App">
+      <Person name={'John'} lastName={'Deo'} age={30} />
+      <Person name='Divesh' lastName='Kumar' age='29'  />
+      <Person name='Admin' lastName='Admin' age={28+2} />
+    </div>
+  );
+}
+
+export default App;
+
+- React State:
+Plane JS object to represent a piece of information about component current suituation.
+
+ - Events
+
+ import './App.css';
+import { useState } from 'react'; //Hook --allow to use state
+
+const App = () => {   
+
+  const [counter,setCounter] = useState(0); //whenever we call function that starts with use is state //counter->name of state, setterfunction
+
+  return (
+    <div className="App">
+   <button onClick={ () => setCounter((prevCounter) => prevCounter - 1) }>-</button>
+   <h1>{counter}</h1>
+   <button onClick={ () => setCounter((nextCounter) => nextCounter + 1 )}>+</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+ - useEffect
+
+   useEffect(() => {
+    // alert('Reload');
+    // setCounter(100);
+    // alert(counter)
+  },[])
+
+
+
+src
+-index.js
+-App.js
+
+const App = () => {
+
+};   Main Functional Component
